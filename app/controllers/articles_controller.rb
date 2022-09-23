@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:show,:edit,:update,:destroy]
-
+    
     def show
         
     end
@@ -24,7 +24,9 @@ class ArticlesController < ApplicationController
         redirect_to @article 
 
        else 
-        render 'new'
+        
+        render :new, status: :unprocessable_entity
+
        end
     end
 
@@ -34,13 +36,14 @@ class ArticlesController < ApplicationController
             flash[:notice] = "Article was updated successfully!"
             redirect_to @article
         else
-            render 'edit'
+            render 'edit', status: :unprocessable_entity
         end
     end
 
     def destroy 
         
         @article.destroy
+        flash[:alert] = "Article was deleted successfully!"
         redirect_to articles_path
     end
 
@@ -53,5 +56,4 @@ class ArticlesController < ApplicationController
     def article_params 
         params.require(:article).permit(:title, :body)
     end
-
 end 
