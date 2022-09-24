@@ -11,18 +11,12 @@
                         <h5 class="card-title fs-2"><%= link_to article.title, article_path(article), class: "text-info"%></h5>
                         <p class="card-text text-truncate "><%= article.body%></p>
 
-                        <div class = "btn btn-outline-success">
-                            <%= link_to 'View', article_path(article)%>
+                        <div >
+                            <%= link_to 'View', article_path(article),class: "btn btn-outline-success"%>
+                            <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-info"%>
+                            <%= button_to 'Delete', article_path(article),  class: "btn btn-outline-danger" ,method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
+                        
                         </div>
-
-                        <div class = "btn btn-outline-info">
-                            <%= link_to 'Edit', edit_article_path(article)%>
-                        </div>
-
-                        <div class = "btn btn-outline-danger">
-                            <%= button_to 'Delete', article_path(article), method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
-                        </div>
-
 
                        
                     </div>
@@ -36,5 +30,5 @@
      <%end%>
 </div>
 
-<p><%= link_to 'Create new article', new_article_path%></p>
+<p>x</p>
 
