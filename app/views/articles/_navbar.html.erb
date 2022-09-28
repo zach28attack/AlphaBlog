@@ -1,7 +1,7 @@
  <nav class="navbar navbar-expand-lg bg-black">
         <div class="container-fluid">
           
-          <%= link_to "ALPHA BLOG", root_path, class: "navbar-brand text-light",id: "logo" %>
+          <%= link_to "ALPHA BLOG", root_path, class: "navbar-brand text-light"%>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -9,13 +9,15 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 
-                <%= link_to "Bloggers", users_path, class: "nav-link active text-light",id: "logo" %>
+                <%= link_to "Bloggers", users_path, class: "nav-link active text-light"%>
               </li>
               
               <li class="nav-item">
                 
-                <%= link_to "Articles", articles_path, class: "nav-link active text-light",id: "logo" %>
+                <%= link_to "Articles", articles_path, class: "nav-link active text-light"%>
               </li>
+
+              
 
               <li class="nav-item">
                 <%= link_to 'Create new article', new_article_path, class: "nav-link text-light"%>
@@ -32,6 +34,26 @@
                   <li><a class="dropdown-item" href="#">All of my deployed projects</a></li>
                 </ul>
               </li>
+
+              
+              <% if logged_in? %>
+                <li class="nav-item">
+                  
+                  <%= link_to "Logout", logout_path, class: "nav-link active text-danger", method: :delete%>
+                </li>
+
+              <% else%>
+              <li class="nav-item">
+                
+                <%= link_to "Login", login_path, class: "nav-link active text-info"%>
+              </li>
+
+              <li class="nav-item">
+                
+                <%= link_to "Signup", signup_path, class: "nav-link active text-info"%>
+              </li>
+
+              <%end%>
 
               
             </ul>
