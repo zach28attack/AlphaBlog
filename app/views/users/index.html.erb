@@ -13,7 +13,7 @@
                         <p class="card-text text-truncate "><%= pluralize(user.articles.count, "article")%></p>
 
                         <div >
-                            <%= link_to 'View profile', users_path(user),class: "btn btn-outline-success"%>
+                            <%= link_to 'View profile', user_path(user),class: "btn btn-outline-success"%>
                             <%= link_to 'Edit profile', edit_user_path(user), class: "btn btn-outline-info"%>
                             
                         </div>
