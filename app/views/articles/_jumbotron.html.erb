@@ -13,14 +13,11 @@
               <div class="col-md-8 fs-4"><%=simple_format(@article.body)%></div></br>
 
                 
-                <% if logged_in? && @article.user == current_user %>
-                <div class = "btn btn-outline-info fs-2">
-                    <%= link_to 'Edit', edit_article_path(@article)%>
-                </div>
-
-                <div class = "btn btn-outline-danger fs-3">
+                <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
+              
+                    <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-info fs-2"%>
                     <%= button_to 'Delete', article_path(@article),class: "btn btn-outline-danger fs-4", method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
-                </div>
+                
                 <%end%>
 
 
