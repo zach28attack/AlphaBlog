@@ -36,6 +36,10 @@
 
               <%end%>
 
+              <%if logged_in? && current_user.admin?%>
+              <%=link_to "View categories(admin)", categories_path, class: "nav-link active text-warning"%>
+              <%end%>
+
             </ul>
 
             <form class="d-flex" role="search">
