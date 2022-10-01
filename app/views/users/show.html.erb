@@ -7,7 +7,18 @@
     </div>
 <%end%>
 <h3 class = "text-center mt-4"><%= @user.username%>'s articles<h3>
+
 <%= render 'articles/articles'%>
+
+<div class="apple_pagination fs-5 mb-4">
+    <div class="page_info">
+      <%= page_entries_info @articles %>
+    </div>
+    <%= will_paginate @articles, :container => false %>
+</div>
+
+
+
 
 
 

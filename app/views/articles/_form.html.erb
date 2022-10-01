@@ -28,7 +28,7 @@
 
                     <div class = "col-10" >
                         <%= f.collection_select :category_ids, Category.order(:category), :id, :name,
-                            { prompt: "Make your selection from the list below (can't be empty)"}, class: "form-select"%>
+                            { prompt: "Make your selection from the list below (can't be empty)"}, class: "form-select", multiple: true, size: "3"%>
                     </div>
                 </div>
                 
