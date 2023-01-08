@@ -1,4 +1,5 @@
-# README
-Link to deployed application:
+📚 This app is completed and was hosted on heroku's free tier before the free tier was abolished.
 
-https://arcane-island-23619.herokuapp.com
+✏️ I created this project following a course on Udemy called "The Complete Ruby on Rails Developer Course".
+
+
