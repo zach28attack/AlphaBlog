@@ -1,15 +1,11 @@
 <h1 class = "text-center mt-4">Category: <%= @category.name%><h1>
-
-
 <% if logged_in? and current_user.admin?%>
     <div class= "text-center mt-4">
         <%= link_to "Edit category", edit_category_path(@category), class: "btn btn-outline-info" %>
      </div>
 <%end%>
 <h3 class = "text-center mt-4"><%= @category.name%><h3>
-
 <%= render 'articles/articles'%>
-
 <div class="apple_pagination fs-5 mb-4">
     <div class="page_info">
       <%= page_entries_info @articles %>

@@ -16,21 +16,15 @@ class UsersController < ApplicationController
     end
 
     def edit
-        
-
     end
 
     def update
-        
         if @user.update(user_params)
             flash[:notice] = "Your account information was successfully updated"
             redirect_to @user
-
         else
             render 'edit'
-
         end
-
     end
 
     def create
@@ -54,7 +48,6 @@ class UsersController < ApplicationController
     private 
     def user_params
         params.require(:user).permit(:username, :email, :password)  
-
     end
 
     def set_user
@@ -66,9 +59,7 @@ class UsersController < ApplicationController
             flash[:alert] = "You can only make changes to your own account"
             redirect_to @user
         end
-        
     end
-
 end
 
 

@@ -1,6 +1,5 @@
 <% if obj.errors.any? %>  
     <div class="alert alert-danger fs-6 alert-dismissible fade show" role="alert">
-        
         <h2><%= pluralize(obj.errors.count, "error") %> prohibited this <%= obj.class.name.downcase%> from being saved:</h2>
         <hr>
         <ul class="mb-0">  
@@ -10,6 +9,4 @@
         </ul>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-           
-        
 <%end%>    
