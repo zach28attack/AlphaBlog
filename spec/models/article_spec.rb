@@ -10,7 +10,7 @@ RSpec.describe Article, type: :model do
     end
   end
 
-  context "without user" do
+  context "with nil user" do
     it "should be invalid" do 
       article.user = nil
       expect(article).to_not be_valid
