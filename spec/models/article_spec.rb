@@ -34,11 +34,18 @@ RSpec.describe Article, type: :model do
   end
 
   describe "with invalid title attribute" do
-    context "with" do
-      it "" do 
-    
+    context "title with less than 5 characters" do
+      it "should be invalid" do 
+        article.title = "1234"
+        expect(article).to_not be_valid
+      end
+    end
+
+    context "with nil title" do
+      it "should be invalid" do 
+        article.title = nil
+        expect(article).to_not be_valid
       end
     end
   end
-
 end
