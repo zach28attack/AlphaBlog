@@ -3,6 +3,13 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   let!(:user) {FactoryBot.create(:user)}
 
+  context "with valid attributes" do
+    it "should be valid" do 
+      expect(user).to be_valid
+    end
+  end
+
+
   describe "with invalid username" do
     context "with nil username" do
       it "should be invalid" do 
