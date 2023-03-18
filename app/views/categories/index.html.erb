@@ -1,37 +1,38 @@
-<h1 class = "text-center mt-4"> Categories<h1>
-
-<div class="apple_pagination fs-5 ">
-    <div class="page_info">
-      <%= page_entries_info @categories %>
+<h1 class = "text-center mt-4"> Categories
+  <h1>
+    <div class="apple_pagination fs-5 ">
+      <div class="page_info">
+        <%= page_entries_info @categories %>
+      </div>
+      <%= will_paginate @categories, :container => false %>
     </div>
-    <%= will_paginate @categories, :container => false %>
-</div>
-<% if logged_in? and current_user.admin?%>
-    <div class= "text-center mt-4">
+    <% if logged_in? and current_user.admin?%>
+      <div class= "text-center mt-4">
         <%= link_to "New category", new_category_path(@category), class: "btn btn-outline-info" %>
-    </div>
-<%end%>
-<div class="container"> 
-    <%@categories.each do |category|%>
-        <div class="row justify-content-center">
-            <div class= "col-4 mt-4"> 
-                <div class="card text-center shadow mb-5 bg-body rounded">
-                    <div class= " card-body ">
-                        <h5 class="card-title fs-2"><%= link_to category.name, category_path(category), class: "text-info"%></h5>
-                        <p class="card-text"><%= pluralize(category.articles.count, "article")%></p>
-                    </div>
-                    <div class="card-footer text-muted fs-6 ">
-                        <small> created <%= time_ago_in_words(category.created_at) %> ago,
-                        edited ago <%=time_ago_in_words(category.updated_at)%> </small>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     <%end%>
-</div>
-<div class="apple_pagination fs-5 ">
-    <div class="page_info">
-      <%= page_entries_info @categories %>
+    <div class="container">
+      <%@categories.each do |category|%>
+        <div class="row justify-content-center">
+          <div class= "col-4 mt-4">
+            <div class="card text-center shadow mb-5 bg-body rounded">
+              <div class= " card-body ">
+                <h5 class="card-title fs-2"><%= link_to category.name, category_path(category), class: "text-info"%></h5>
+                <p class="card-text"><%= pluralize(category.articles.count, "article")%></p>
+              </div>
+              <div class="card-footer text-muted fs-6 ">
+                <small> created <%= time_ago_in_words(category.created_at) %> ago,
+                  edited ago <%=time_ago_in_words(category.updated_at)%> </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      <%end%>
     </div>
-    <%= will_paginate @categories, :container => false %>
-</div></br>
+    <div class="apple_pagination fs-5 ">
+      <div class="page_info">
+        <%= page_entries_info @categories %>
+      </div>
+      <%= will_paginate @categories, :container => false %>
+    </div>
+  </br>

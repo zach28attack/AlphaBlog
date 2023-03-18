@@ -1,14 +1,14 @@
-<h1 class = "text-center mt-4"> Listing all articles<h1>
+<h1 class = "text-center mt-4"> Listing all articles</h1>
 <div class="apple_pagination fs-5 ">
-    <div class="page_info">
-      <%= page_entries_info @articles %>
-    </div>
-    <%= will_paginate @articlees, :container => false %>
+  <div class="page_info">
+    <%= page_entries_info @articles %>
+  </div>
+  <%= will_paginate @articlees, :container => false %>
 </div>
 <%= render 'articles' %>
 <div class="apple_pagination fs-5 mb-4">
-    <div class="page_info">
-      <%= page_entries_info @articles %>
-    </div>
-    <%= will_paginate @articles, :container => false %>
+  <div class="page_info">
+    <%= page_entries_info @articles %>
+  </div>
+  <%= will_paginate @articles, :container => false %>
 </div>
