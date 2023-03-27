@@ -15,14 +15,20 @@
  */
 
 :root {
-  --primary-color: #7a7582;
-  --secondary-color: #fffae6;
-  --accent-color: #e53c85;
+  --primary-color: #3c5c9b;
+  --secondary-color: #aaffb8;
+  --accent-color: #ef3e9c;
+  --primary-dark: #250c75;
+  --primary-light: #4a23d3;
+  --light: 300;
+  --regular: 400;
+
+  /* #3c5c9b,#aaffb8,#ef3e9c,#250c75,#4a23d3 */
 }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Josefin Sans", sans-serif;
-  font-weight: 300;
+  font-weight: var(--light);
 }
