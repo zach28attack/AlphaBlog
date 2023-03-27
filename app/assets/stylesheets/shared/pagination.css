@@ -12,7 +12,7 @@
   display: inline-block;
   width: 1.4rem;
   height: 1.4rem;
-  color: var(--secondary-color);
+  color: var(--accent-color);
 }
 .pagination a:link {
   text-decoration: none;
