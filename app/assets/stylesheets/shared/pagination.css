@@ -1,0 +1,31 @@
+.pagination {
+  background: rgb(100, 132, 195);
+  text-align: center;
+  padding: 0.3rem;
+}
+.pagination .disabled {
+  color: var(--primary-color);
+}
+.pagination .current {
+  font-style: normal;
+  font-weight: bold;
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--secondary-color);
+}
+.pagination a:link {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+.pagination a:visited {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+.pagination a:hover {
+  text-decoration: underline;
+}
+.pagination a:active {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
