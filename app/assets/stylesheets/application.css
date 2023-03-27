@@ -32,3 +32,22 @@
   font-family: "Josefin Sans", sans-serif;
   font-weight: var(--light);
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  height: 1.5rem;
+  align-items: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  color: var(--secondary-color);
+}
