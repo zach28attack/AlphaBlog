@@ -14,4 +14,4 @@ This is a simple CRUD (Create, Read, Update, Delete) application for blogging cr
 
 # Frontend Redesign
 
-The frontend of this application has been redesigned using custom HTML, CSS, and JavaScript in order to practice these respective languages. Bootstrap has been removed from the project.
+The frontend of this application is being redesigned using custom HTML, CSS, and JavaScript in order to practice these respective languages. Bootstrap has been removed from the project.
