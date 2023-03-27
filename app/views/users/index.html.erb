@@ -3,7 +3,6 @@
 <%= will_paginate @articlees, :container => false %>
 <% @users.each do |user|%>
   <%= link_to user.username, user_path(user) %>
-  <h5><%= link_to gravatar_for(user), users_path(user)%></h5>
   <p><%= pluralize(user.articles.count, "article")%></p>
   <%= link_to 'View profile', user_path(user)%>
   <% if logged_in? and user == current_user%>
