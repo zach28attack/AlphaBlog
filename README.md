@@ -7,9 +7,10 @@ This is a simple CRUD (Create, Read, Update, Delete) application for blogging cr
 **The application allows users to:**
 
 - Create, Read, Update, and Delete blog posts
+  - with category tags
 - View a list of all blog posts
+  - filter by categories
 - View a single blog post
-- Comment on a blog post
 
 # Frontend Redesign
 
