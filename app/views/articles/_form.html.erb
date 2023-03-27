@@ -1,13 +1,10 @@
 <%= render 'shared/errors', obj: @article %>
 <%= form_with(model: @article, local: true)  do |f| %>
-  <%= f.label :title, ht fs-4%>
+  <%= f.label :title%>
   <%= f.text_field :title,  placeholder: "Title of article" %>
-  <%= f.label :body, ht fs-4%>
-  <%= f.text_area :body, rows: 10, placeholder: "Description of article"  %>
-  <%= f.label :category, ht fs-3%>
-  <%= f.collection_select(:category_ids, Category.all, :id, :name,
-                                                { prompt: "Make your selection from the list below (can be empty)"},
-                                                { multiple: true, size: 3, class: "custom-select shadow rounded" }) %>
+  <%= f.label :body%>
+  <%= f.text_area :body,  placeholder: "Description of article"  %>
+  <%= f.label :category%>
   <%= f.submit "Save article", class: "btn btn-outline-light btn-lg col-2" %>
 <%end%>
 <%= link_to '[Cancel and return to articles listing]', articles_path, class: "text-dark"%>
