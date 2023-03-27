@@ -10,8 +10,10 @@
   </head>
   <body data-turbo="false">
     <%= render 'shared/navbar' %>
-    <%= render 'layouts/messages' %>
+    <%= render 'shared/messages' %>
     <%= yield %>
-    <%= render 'layouts/footer' %>
+    <footer>
+      <small> Made by Zachary Casares </small>
+    </footer>
   </body>
 </html>
