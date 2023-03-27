@@ -1,5 +1,8 @@
 <nav>
-  <%= link_to "ALPHA BLOG", root_path%>
+  <%= link_to root_path, class: "nav-logo" do %>
+    <span class="first-letter">A</span>LPHA 
+    <span class="first-letter">B</span>LOG
+  <% end %>
   <%= link_to "Bloggers", users_path%>
   <%= link_to "Articles", articles_path%>
   <%if logged_in?%>

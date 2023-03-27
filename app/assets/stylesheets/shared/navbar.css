@@ -1,3 +1,31 @@
 nav {
   background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-evenly;
+  height: 2.5rem;
+  align-items: center;
+}
+nav a:link {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+nav a:visited {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+nav a:hover {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+nav a:active {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+.nav-logo {
+  font-weight: var(--regular);
+  font-size: 2rem;
+  padding-top: 0.5rem;
+}
+.nav-logo .first-letter {
+  color: var(--accent-color);
 }
