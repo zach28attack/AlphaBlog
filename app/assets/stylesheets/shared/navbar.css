@@ -28,4 +28,5 @@ nav a:active {
 }
 .nav-logo .first-letter {
   color: var(--accent-color);
+  font-size: 1.2em;
 }
