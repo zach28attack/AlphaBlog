@@ -3,26 +3,28 @@
     <header>
       <%= link_to article.title, article_path(article), class: "article-title" %>
     </header>
-    <% if article.categories.any? %>
-      <div class="article-subheader">
-        <div class="article-category">
-          <%= render article.categories %>
+    <div style="position: relative">
+      <% if article.categories.any? %>
+        <div class="article-subheader"  id="modal-param">
+          <div class="article-category">
+            <%= render article.categories %>
+          </div>
+          <small> Posted <%= time_ago_in_words(article.created_at) %> ago </small>
         </div>
-        <small> Posted <%= time_ago_in_words(article.created_at) %> ago </small>
+      <%else%>
+        <small class="article-subheader flex-end"  id="modal-param"> Posted <%= time_ago_in_words(article.created_at) %> ago </small>
+      <%end%>
+      <div class="article-body flex-column">
+        <p  id="modal-param"><%= article.body.truncate(100)%></p>
+        <div class="hidden article-buttons">
+          <button><%= link_to 'View', article_path(article)%></button>
+          <% if logged_in? and (article.user == current_user || current_user.admin?) %>
+            <button><%= link_to 'Edit', edit_article_path(article)%></button>
+            <%= button_to 'Delete', article_path(article),method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
+          <%end%>
+        </div>
+        <%= link_to article.user.username, user_path(article.user), class: "article-name", id: "modal-param" %>
       </div>
-    <%else%>
-      <small class="article-subheader flex-end"> Posted <%= time_ago_in_words(article.created_at) %> ago </small>
-    <%end%>
-    <div class="article-body flex-column">
-      <p><%= article.body.truncate(100)%></p>
-      <div class="hidden article buttons">
-        <%= link_to 'View', article_path(article)%>
-        <% if logged_in? and (article.user == current_user || current_user.admin?) %>
-          <%= link_to 'Edit', edit_article_path(article)%>
-          <%= button_to 'Delete', article_path(article),method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
-        <%end%>
-      </div>
-      <%= link_to article.user.username, user_path(article.user), class: "article-name" %>
     </div>
   </div>
 <%end%>
