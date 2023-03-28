@@ -1,15 +1,28 @@
 <% @articles.each do |article|%>
-  by <%= link_to article.user.username, user_path(article.user) %>
-  <% if article.categories.any? %>
-    <%= render article.categories %>
-  <%end%>
-  <h5><%= link_to article.title, article_path(article)%></h5>
-  <p><%= article.body%></p>
-  <%= link_to 'View', article_path(article)%>
-  <% if logged_in? and (article.user == current_user || current_user.admin?) %>
-    <%= link_to 'Edit', edit_article_path(article)%>
-    <%= button_to 'Delete', article_path(article),method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
-  <%end%>
-  <small> created <%= time_ago_in_words(article.created_at) %> ago,
-    edited ago <%=time_ago_in_words(article.updated_at)%> </small>
+  <div class="article">
+    <header>
+      <%= link_to article.title, article_path(article), class: "article-title" %>
+    </header>
+    <% if article.categories.any? %>
+      <div class="article-subheader">
+        <div class="article-category">
+          <%= render article.categories %>
+        </div>
+        <small> Posted <%= time_ago_in_words(article.created_at) %> ago </small>
+      </div>
+    <%else%>
+      <small class="article-subheader flex-end"> Posted <%= time_ago_in_words(article.created_at) %> ago </small>
+    <%end%>
+    <div class="article-body flex-column">
+      <p><%= article.body.truncate(100)%></p>
+      <div class="hidden article buttons">
+        <%= link_to 'View', article_path(article)%>
+        <% if logged_in? and (article.user == current_user || current_user.admin?) %>
+          <%= link_to 'Edit', edit_article_path(article)%>
+          <%= button_to 'Delete', article_path(article),method: :delete, form: { data:{ turbo_confirm: 'Are you sure?'}}%>
+        <%end%>
+      </div>
+      <%= link_to article.user.username, user_path(article.user), class: "article-name" %>
+    </div>
+  </div>
 <%end%>
