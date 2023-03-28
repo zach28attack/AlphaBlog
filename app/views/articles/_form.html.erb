@@ -5,6 +5,8 @@
   <%= f.label :body%>
   <%= f.text_area :body,  placeholder: "Description of article"  %>
   <%= f.label :category%>
-  <%= f.submit "Save article", class: "btn btn-outline-light btn-lg col-2" %>
+  <%= f.collection_select(:category_ids, Category.all, :id, :name,
+                                                { prompt: "Make your selection from the list below (can be empty)"},
+                                                { multiple: true, size: 3, class: "custom-select shadow rounded" }) %>  <%= f.submit "Save article", class: "btn btn-outline-light btn-lg col-2" %>
 <%end%>
 <%= link_to '[Cancel and return to articles listing]', articles_path, class: "text-dark"%>
