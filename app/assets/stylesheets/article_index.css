@@ -21,6 +21,9 @@
   padding: 0.5rem;
   margin-left: 1rem;
   font-weight: var(--regular);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .article-category {
   background-color: var(--primary-color);
