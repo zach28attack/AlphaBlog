@@ -1,0 +1,52 @@
+.user-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding-top: 1rem;
+}
+.user-buttons {
+  display: flex;
+  justify-content: flex-start;
+  transform: translateY(-10px);
+}
+
+.user-buttons button {
+  padding: 5px 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 15px;
+}
+.user-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.user-dropdown {
+  padding: 5px 10px;
+  padding-top: 9px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 25px;
+  font-size: 2rem;
+}
+.user-card button:hover {
+  color: var(--secondary-color);
+}
+.user-img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 40%;
+}
+.user-buttons a:link {
+  color: white;
+  text-decoration: none;
+}
+.user-buttons a:visited {
+  color: white;
+}
+.user-buttons a:hover {
+  color: white;
+}
+.user-buttons a:active {
+  color: white;
+}
