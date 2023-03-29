@@ -36,7 +36,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10rem; /* temp fix for footer covering articles*/
 }
 .flex-column {
   flex-direction: column;
@@ -59,22 +58,6 @@ footer {
   color: var(--secondary-color);
 }
 
-a:link {
-  text-decoration: none;
-  color: whitesmoke;
-}
-a:visited {
-  text-decoration: none;
-  color: whitesmoke;
-}
-a:hover {
-  text-decoration: underline;
-  color: whitesmoke;
-}
-a:active {
-  text-decoration: none;
-  color: whitesmoke;
-}
 .hidden {
   display: none;
 }
