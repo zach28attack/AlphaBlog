@@ -12,7 +12,6 @@ articles.forEach((article) => {
     buttonModal.classList.remove("hidden");
     buttonModal.classList.add("modal");
     buttonModal.classList.add("show");
-    console.log(buttonModal);
     modalParams.forEach((modalParam) => {
       modalParam.classList.add("modal-param");
     });
@@ -27,4 +26,14 @@ articles.forEach((article) => {
       });
     });
   });
+});
+
+const userSettingsTrigger = document.querySelector("#settings-dropdown-toggle");
+const buttons = document.querySelector(".user-buttons");
+userSettingsTrigger.addEventListener("click", () => {
+  if (buttons.classList.contains("hidden")) {
+    buttons.classList.remove("hidden");
+  } else {
+    buttons.classList.add("hidden");
+  }
 });
