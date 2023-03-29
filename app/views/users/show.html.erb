@@ -1,9 +1,22 @@
-<h1><%= @user.username%>'s profile</h1>
-<% if logged_in? and (@user == current_user || current_user.admin?)%>
-  <%= link_to "Edit account", edit_user_path(@user)%>
-  <%= button_to "Delete account", user_path(@user), method: :delete, form: { data:{ turbo_confirm: 'Are you sure you want to delete this account and all associated articles?'}}%>
+<div class="user-container">
+  <div class="user-card">
+    <%= image_tag "default-profile-picture1.jpg", alt: "Default profile picture", class:"user-img" %>
+    <button  class="container user-dropdown" id="settings-dropdown-toggle">
+      <%= @user.username%>
+    </button>
+    <% if logged_in? and (@user == current_user || current_user.admin?)%>
+      <div class="user-buttons hidden">
+        <button><%= link_to "Edit account", edit_user_path(@user)%></button>
+        <%= button_to "Delete account", user_path(@user), method: :delete%>
+      </div>
+    <%end%>
+  </div>
+  <div>
+    <%= render 'articles/articles'%>
+  </div>
+</div>
+<% if @user.articles.length > 5%>
+  <div class="pagination bottom">
+    <%= will_paginate @articles, :container => false %>
+  </div>
 <%end%>
-<h3><%= @user.username%>'s articles</h3>
-<%= render 'articles/articles'%>
-<%= page_entries_info @articles %>
-<%= will_paginate @articles, :container => false %>
