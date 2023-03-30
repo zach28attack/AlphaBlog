@@ -58,3 +58,14 @@ userCards.forEach((userCard) => {
     }
   });
 });
+
+const userFormToggle = document.querySelector("#user-form-toggle");
+const userForm = document.querySelector(".user-form");
+const showUserForm = (e) => {
+  e.preventDefault();
+  userForm.classList.toggle("hidden");
+  userForm.classList.add("user-dropdown");
+};
+userFormToggle.addEventListener("click", (e) => {
+  showUserForm(e);
+});
