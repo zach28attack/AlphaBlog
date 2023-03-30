@@ -6,7 +6,7 @@
     </button>
     <% if logged_in? and (@user == current_user || current_user.admin?)%>
       <div class="user-buttons hidden">
-        <button><%= link_to "Edit account", edit_user_path(@user)%></button>
+        <button id="user-form-toggle"><%= link_to "Edit account", edit_user_path(@user)%></button>
         <%= button_to "Delete account", user_path(@user), method: :delete%>
       </div>
     <%end%>
