@@ -30,10 +30,31 @@ articles.forEach((article) => {
 
 const userSettingsTrigger = document.querySelector("#settings-dropdown-toggle");
 const buttons = document.querySelector(".user-buttons");
-userSettingsTrigger.addEventListener("click", () => {
-  if (buttons.classList.contains("hidden")) {
-    buttons.classList.remove("hidden");
-  } else {
-    buttons.classList.add("hidden");
-  }
+if (userSettingsTrigger) {
+  userSettingsTrigger.addEventListener("click", () => {
+    if (buttons.classList.contains("hidden")) {
+      buttons.classList.remove("hidden");
+    } else {
+      buttons.classList.add("hidden");
+    }
+  });
+}
+
+const userCards = document.querySelectorAll(".user-grid-cell");
+userCards.forEach((userCard) => {
+  userCard.addEventListener("mouseover", (e) => {
+    if (e.target.closest(".user-grid-cell") === userCard) {
+      userCard.style.position = "relative";
+      userCard.style.zIndex = "100";
+      userCard.style.transform = "scale(1.5)";
+
+      userCard.addEventListener("mouseout", (e) => {
+        if (e.target.closest(".user-grid-cell") === userCard) {
+          userCard.style.transform = "scale(1)";
+          userCard.style.zIndex = "0";
+          userCard.style.position = "";
+        }
+      });
+    }
+  });
 });
