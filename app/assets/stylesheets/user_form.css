@@ -1,21 +1,37 @@
 .user-form {
   border: solid;
-  padding: 1rem;
+  padding: 5rem;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--primary-color);
   border-radius: 10px;
-  height: 18rem;
-  width: 18rem;
   color: white;
   gap: 0.5rem;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
+  /* width: 5rem; */
 }
+
 .user-form input[type="text"],
 input[type="email"],
 input[type="password"] {
   font-size: 1.5rem;
+  width: 20%;
+  height: 50%;
 }
 .user-form input[type="submit"] {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+  outline: none;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0 0.5rem;
+  border-radius: 5px;
+}
+.user-form input[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+.user-dropdown {
+  z-index: 1;
 }
