@@ -81,19 +81,15 @@
 
 .article-category a:link {
   color: whitesmoke !important;
-  /* color: whitesmoke; */
 }
 .article-category a:visited {
   color: whitesmoke !important;
-  /* color: whitesmoke; */
 }
 .article-category a:hover {
   color: var(--secondary-color) !important;
-  /* color: whitesmoke; */
 }
 .article-category a:active {
   color: whitesmoke !important;
-  /* color: whitesmoke; */
 }
 .article header a:link {
   color: whitesmoke;
