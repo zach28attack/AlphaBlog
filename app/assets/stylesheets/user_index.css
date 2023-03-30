@@ -49,17 +49,30 @@
   border-radius: 3px;
 }
 
-.user-index-header p a:link {
+.user-index-header a:link {
   text-decoration: none;
   color: var(--primary-color);
   font-weight: var(--regular);
 }
-.user-index-header p a:visited {
+.user-index-header a:visited {
   color: var(--primary-color);
 }
-.user-index-header p a:hover {
+.user-index-header a:hover {
+  color: var(--primary-dark);
+}
+.user-index-header a:active {
   color: var(--primary-color);
 }
-.user-index-header p a:active {
-  color: var(--primary-color);
+.user-article-list a:link {
+  text-decoration: none;
+  color: white;
+}
+.user-article-list a:visited {
+  color: white;
+}
+.user-article-list a:hover {
+  color: var(--secondary-color);
+}
+.user-article-list a:active {
+  color: white;
 }
