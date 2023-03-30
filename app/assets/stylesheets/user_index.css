@@ -30,23 +30,25 @@
   text-overflow: ellipsis;
   margin: auto;
 }
-/* .user-blog-count {
-}
-.user-index-button {
-} */
+
 .user-gap {
   gap: 1rem;
 }
 .user-article-list {
   float: left;
   padding-left: 2rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   margin-top: 1rem;
   width: 100%;
   background-color: var(--primary-color);
   color: white;
   border-radius: 3px;
+}
+.user-article-list :nth-child(2),
+:nth-child(3),
+:nth-child(4) {
+  padding-top: 0.2rem;
 }
 
 .user-index-header a:link {
