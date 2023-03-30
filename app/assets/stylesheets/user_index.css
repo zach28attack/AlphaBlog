@@ -2,14 +2,22 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  row-gap: 1.5rem;
+  column-gap: 1.5rem;
+  margin: 1.5rem 1.5rem;
+  position: relative;
 }
 .user-grid-cell {
   height: 13rem;
   border: solid var(--primary-color);
-  margin: 1.5rem;
   border-radius: 5px;
   padding-left: 0.4rem;
   padding-right: 0.4rem;
+  background-color: white;
+  transition: transform 0.3s ease-in-out;
+}
+.user-grid-cell:hover {
+  transform: scale(1);
 }
 .user-grid-cell small {
   font-style: italic;
