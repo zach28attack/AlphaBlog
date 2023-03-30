@@ -1,11 +1,13 @@
-<%= render 'shared/errors', obj: @user %>
-<%= form_with(model: @user, local: true)  do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username, placeholder: "Enter a username" %>
-  <%= f.label :email%>
-  <%= f.email_field :email, placeholder: "Enter your email address"  %>
-  <%= f.label :password%>
-  <%= f.password_field :password, placeholder: "Choose a password" %>
-  <%= f.submit(@user.new_record? ? "Sign up" : "Update account" )%>
-<%end%>
-<%= link_to '[Cancel and return to articles listing]', articles_path%>
+<div class="container flex-column">
+  <%= form_with(model: @user, local: true)  do |f| %>
+    <div class="user-form ">
+      <%= f.label :username %>
+      <%= f.text_field :username, placeholder: "@username" %>
+      <%= f.label :email%>
+      <%= f.email_field :email, placeholder: "example@email.com"  %>
+      <%= f.label :password%>
+      <%= f.password_field :password, placeholder: "'password'" %>
+      <%= f.submit(@user.new_record? ? "Sign up" : "Update account" )%>
+    </div>
+  <%end%>
+</div>
