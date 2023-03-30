@@ -1,0 +1,65 @@
+.user-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.user-grid-cell {
+  height: 13rem;
+  border: solid var(--primary-color);
+  margin: 1.5rem;
+  border-radius: 5px;
+}
+.user-grid-cell small {
+  font-style: italic;
+}
+.user-index-img {
+  height: 25%;
+  width: 25%;
+  border-radius: 35%;
+}
+.user-index-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.2rem 1rem;
+  align-items: center;
+}
+.user-index-header p {
+  font-size: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: auto;
+}
+/* .user-blog-count {
+}
+.user-index-button {
+} */
+.user-gap {
+  gap: 1rem;
+}
+.user-article-list {
+  float: left;
+  padding-left: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 3px;
+}
+
+.user-index-header p a:link {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: var(--regular);
+}
+.user-index-header p a:visited {
+  color: var(--primary-color);
+}
+.user-index-header p a:hover {
+  color: var(--primary-color);
+}
+.user-index-header p a:active {
+  color: var(--primary-color);
+}

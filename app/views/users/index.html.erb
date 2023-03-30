@@ -1,17 +1,27 @@
-<h1> All bloggers</h1>
-<%= page_entries_info @articles %>
-<%= will_paginate @articlees, :container => false %>
-<% @users.each do |user|%>
-  <%= link_to user.username, user_path(user) %>
-  <p><%= pluralize(user.articles.count, "article")%></p>
-  <%= link_to 'View profile', user_path(user)%>
-  <% if logged_in? and user == current_user%>
-    <%= link_to 'Edit profile', edit_user_path(user)%>
-  <% end %>
-  <%if logged_in? and current_user.admin? %>
-    <%= button_to "Delete account", user_path(user), method: :delete, form: { data:{ turbo_confirm: 'Are you sure you want to delete this account and all associated articles?'}}%>
-  <% end %>
-  <small> Joined <%= time_ago_in_words(user.created_at) %> ago </small>
-<%end%>
-<%= page_entries_info @articles %>
-<%= will_paginate @articlees, :container => false %>
+<div class="user-grid">
+  <% @users.each do |user|%>
+    <div class="user-grid-cell">
+      <div class="container flex-column">
+        <div class="user-index-header">
+          <%= image_tag "default-profile-picture1.jpg", alt: "Default profile picture", class:"user-index-img" %>
+          <p><%= link_to user.username, user_path(user) %></p>
+        </div>
+        <div class="container user-gap">
+          <p class="user-blog-count"><%= pluralize(user.articles.count, "article")%></p>
+          <button class="user-index-button"><%= link_to 'View profile', user_path(user)%></button>
+        </div>
+        <ul class="user-article-list">
+          <%articles = user.articles.all%>
+          <li><%= articles[-1].title if articles[-1] %></li>
+          <li><%= articles[-2].title if articles[-2] %></li>
+          <li><%= articles[-3].title if articles[-3] %></li>
+          <li><%= articles[-4].title if articles[-4] %></li>
+        </ul>
+      </div>
+      <small> Joined <%= time_ago_in_words(user.created_at) %> ago </small>
+    </div>
+  <%end%>
+</div>
+<div class="pagination bottom">
+  <%= will_paginate @users, :container => false %>
+</div>
