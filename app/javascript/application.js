@@ -66,6 +66,24 @@ const showUserForm = (e) => {
   userForm.classList.toggle("hidden");
   userForm.classList.add("user-dropdown");
 };
+const sessionFormToggle = document.querySelector("#session-form-toggle");
+const sessionForm = document.querySelector("#session-form");
+const showSessionForm = (e) => {
+  e.preventDefault();
+  sessionForm.classList.toggle("hidden");
+  sessionForm.classList.add("user-dropdown");
+};
+
 userFormToggle.addEventListener("click", (e) => {
   showUserForm(e);
+  if (!sessionForm.classList.contains("hidden")) {
+    sessionForm.classList.add("hidden");
+  }
+});
+
+sessionFormToggle.addEventListener("click", (e) => {
+  showSessionForm(e);
+  if (!userForm.classList.contains("hidden")) {
+    userForm.classList.add("hidden");
+  }
 });
