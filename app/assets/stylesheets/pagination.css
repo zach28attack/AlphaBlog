@@ -2,7 +2,6 @@
   background: rgb(100, 132, 195);
   text-align: center;
   padding: 0.3rem;
-  padding-right: 30%;
 }
 .pagination .disabled {
   color: var(--primary-color);
