@@ -6,16 +6,29 @@
           <%= image_tag "default-profile-picture1.jpg", alt: "Default profile picture", class:"user-index-img" %>
           <p><%= link_to user.username, user_path(user) %></p>
         </div>
-        <div class="container user-gap">
-          <p class="user-blog-count"><%= pluralize(user.articles.count, "article")%></p>
-          <button class="user-index-button"><%= link_to 'View profile', user_path(user)%></button>
-        </div>
+        <p class="user-blog-count"><%= pluralize(user.articles.count, "article")%></p>
         <ul class="user-article-list">
           <%articles = user.articles.all%>
-          <li><%= articles[-1].title if articles[-1] %></li>
-          <li><%= articles[-2].title if articles[-2] %></li>
-          <li><%= articles[-3].title if articles[-3] %></li>
-          <li><%= articles[-4].title if articles[-4] %></li>
+          <li>
+            <% if articles[-1] %>
+              <%= link_to articles[-1].title, article_path(articles[-1]) %>
+            <%end%>
+          </li>
+          <li>
+            <% if articles[-2] %>
+              <%= link_to articles[-2].title, article_path(articles[-2]) %>
+            <%end%>
+          </li>
+          <li>
+            <% if articles[-3] %>
+              <%= link_to articles[-3].title, article_path(articles[-3]) %>
+            <%end%>
+          </li>
+          <li>
+            <% if articles[-4] %>
+              <%= link_to articles[-4].title, article_path(articles[-4]) %>
+            <%end%>
+          </li>
         </ul>
       </div>
       <small> Joined <%= time_ago_in_words(user.created_at) %> ago </small>
