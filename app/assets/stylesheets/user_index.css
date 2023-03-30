@@ -8,6 +8,8 @@
   border: solid var(--primary-color);
   margin: 1.5rem;
   border-radius: 5px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
 }
 .user-grid-cell small {
   font-style: italic;
@@ -20,7 +22,7 @@
 .user-index-header {
   display: flex;
   justify-content: space-between;
-  margin: 0.2rem 1rem;
+  margin: 0.1rem 0.1rem;
   align-items: center;
 }
 .user-index-header p {
