@@ -6,7 +6,7 @@
           <%= image_tag "default-profile-picture1.jpg", alt: "Default profile picture", class:"user-index-img" %>
           <p><%= link_to user.username, user_path(user) %></p>
         </div>
-        <p class="user-blog-count"><%= pluralize(user.articles.count, "article")%></p>
+        <%= pluralize(user.articles.count, "article")%>
         <ul class="user-article-list">
           <%articles = user.articles.all%>
           <li>
