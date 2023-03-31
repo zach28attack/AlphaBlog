@@ -14,4 +14,8 @@ class User < ApplicationRecord
     validates :password, presence: true, length: {minimum: 6, maximum: 20}
     has_secure_password
     self.per_page = 5
+    has_one_attached :image do |attachable|
+        attachable.variant :thumb, resize_to_limit: [200, 200]
+    end
+    
 end
