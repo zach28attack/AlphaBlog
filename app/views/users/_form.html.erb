@@ -1,13 +1,24 @@
 <div class="container">
-  <%= form_with(model: @user, local: true)  do |f| %>
+  <%= form_with(model: @user, local: true, id:"user-form")  do |f| %>
     <div class="user-form hidden">
-      <%= f.label :username %>
-      <%= f.text_field :username, placeholder: "@username" %>
-      <%= f.label :email%>
-      <%= f.email_field :email, placeholder: "example@email.com"  %>
-      <%= f.label :password%>
-      <%= f.password_field :password, placeholder: "'password'" %>
-      <%= f.submit "✅"%>
+      <div class="form-grid">
+        <p>
+          <%= f.label :username %>
+          <%= f.text_field :username, placeholder: "username", required: true%>
+        </p>
+        <p>
+          <%= f.label :email%>
+          <%= f.email_field :email, placeholder: "@email.com", required: true  %>
+        </p>
+        <p>
+          <%= f.label :password%>
+          <%= f.password_field :password, placeholder: "'password'", required: true %>
+          <%= f.submit "✅"%>
+        </p>
+        <small id="username-error"></small>
+        <small></small>
+        <small id="password-error"></small>
+      </div>
     </div>
   <%end%>
 </div>

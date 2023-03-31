@@ -1,10 +1,10 @@
 <div class="container">
-  <%= form_with(model: @user, local: true)  do |f| %>
+  <%= form_with(model: @user, local: true, id: "session_form")  do |f| %>
     <div class="user-form hidden" id="session-form">
       <%= f.label :email%>
-      <%= f.email_field :email, placeholder: "example@email.com"  %>
+      <%= f.email_field :email, placeholder: "@email.com", required: true  %>
       <%= f.label :password%>
-      <%= f.password_field :password, placeholder: "'password'" %>
+      <%= f.password_field :password, placeholder: "'password'", required: true  %>
       <%= f.submit "✅"%>
     </div>
   <%end%>
