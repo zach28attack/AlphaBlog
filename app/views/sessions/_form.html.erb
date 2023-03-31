@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_with(model: @user, local: true, id: "session_form")  do |f| %>
+  <%= form_with(scope: :session, url: login_path, local: true, id: "session_form")  do |f| %>
     <div class="user-form hidden" id="session-form">
       <%= f.label :email%>
       <%= f.email_field :email, placeholder: "@email.com", required: true  %>
