@@ -1,24 +1,37 @@
 .user-form {
   border: solid;
   padding: 5rem;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   background-color: var(--primary-color);
   border-radius: 10px;
   color: white;
   gap: 0.5rem;
-  /* font-size: 1.5rem; */
-  /* width: 5rem; */
+  font-size: 1.5rem;
+  width: 100%;
 }
-
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#username-error,
+#password-error {
+  font-size: 0.8rem;
+  margin: auto;
+}
+#username-error span,
+#password-error span {
+  color: var(--accent-color);
+}
 .user-form input[type="text"],
 input[type="email"],
 input[type="password"] {
   font-size: 1.5rem;
-  width: 20%;
-  height: 50%;
+  width: 10rem;
+  height: 75%;
 }
+
 .user-form input[type="submit"] {
   /* margin-top: 1rem; */
   outline: none;
