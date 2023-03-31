@@ -2,11 +2,15 @@
   <% @users.each do |user|%>
     <div class="user-grid-cell">
       <div class="container flex-column">
-        <div class="user-index-header">
+        <% if user.image.attached?%>
+          <%= image_tag user.image.variant(:thumb), alt: "Profile picture", class:"user-index-img" %>
+        <%else%>
           <%= image_tag "default-profile-picture1.jpg", alt: "Default profile picture", class:"user-index-img" %>
+        <%end%>
+        <div class="user-index-header">
           <p><%= link_to user.username, user_path(user) %></p>
         </div>
-        <%= pluralize(user.articles.count, "article")%>:
+        <p style="margin-left: 6rem"><%= pluralize(user.articles.count, "article")%>:</p>
         <ul class="user-article-list">
           <%articles = user.articles.all%>
           <li>
