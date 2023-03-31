@@ -1,6 +1,10 @@
 <div class="user-container">
   <div class="user-card">
-    <%= image_tag "default-profile-picture1.jpg", alt: "Default profile picture", class:"user-img" %>
+    <% if @user.image.attached?%>
+      <%= image_tag @user.image, alt: "Profile picture", class:"user-img" %>
+    <%else%>
+      <%= image_tag "default-profile-picture1.jpg", alt: "Default profile picture", class:"user-img" %>
+    <%end%>
     <button  class="container user-dropdown" id="settings-dropdown-toggle">
       <%= @user.username%>
     </button>
