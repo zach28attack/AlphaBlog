@@ -73,64 +73,66 @@ const showSessionForm = (e) => {
   sessionForm.classList.toggle("hidden");
   sessionForm.classList.add("user-dropdown");
 };
+if (userFormToggle) {
+  userFormToggle.addEventListener("click", (e) => {
+    showUserForm(e);
 
-userFormToggle.addEventListener("click", (e) => {
-  showUserForm(e);
+    //listen for form submission
+    const userFormSubmit = userForm.querySelector("input[type=submit]");
+    userFormSubmit.addEventListener("click", (e) => {
+      //grab form
+      const userFormById = document.querySelector("#user-form");
+      // if any field is blank
+      if (!userFormById.checkValidity()) {
+        userFormById.reportValidity();
+        e.preventDefault();
+      }
+      //add error messages to username
+      const userFormUsername = userForm.querySelector("#user_username").value;
+      const usernameError = document.querySelector("#username-error");
+      console.log(userFormUsername.length);
+      if (userFormUsername.length < 3 || userFormUsername.length > 15) {
+        usernameError.innerHTML =
+          "<span>*</span>must be between 3 and 15 characters";
+      } else {
+        usernameError.innerHTML = "";
+      }
 
-  //listen for form submission
-  const userFormSubmit = userForm.querySelector("input[type=submit]");
-  userFormSubmit.addEventListener("click", (e) => {
-    //grab form
-    const userFormById = document.querySelector("#user-form");
-    // if any field is blank
-    if (!userFormById.checkValidity()) {
-      userFormById.reportValidity();
-      e.preventDefault();
-    }
-    //add error messages to username
-    const userFormUsername = userForm.querySelector("#user_username").value;
-    const usernameError = document.querySelector("#username-error");
-    console.log(userFormUsername.length);
-    if (userFormUsername.length < 3 || userFormUsername.length > 15) {
-      usernameError.innerHTML =
-        "<span>*</span>must be between 3 and 15 characters";
-    } else {
-      usernameError.innerHTML = "";
-    }
+      //add error messages to password
+      const userFormPassword = userForm.querySelector("#user_password").value;
+      const userPasswordError = document.querySelector("#password-error");
+      console.log(userFormPassword.length);
+      if (userFormPassword.length < 6 || userFormPassword.length > 20) {
+        userPasswordError.innerHTML =
+          "<span>*</span>must be between 6 and 20 characters";
+      } else {
+        userPasswordError.innerHTML = "";
+      }
+    });
 
-    //add error messages to password
-    const userFormPassword = userForm.querySelector("#user_password").value;
-    const userPasswordError = document.querySelector("#password-error");
-    console.log(userFormPassword.length);
-    if (userFormPassword.length < 6 || userFormPassword.length > 20) {
-      userPasswordError.innerHTML =
-        "<span>*</span>must be between 6 and 20 characters";
-    } else {
-      userPasswordError.innerHTML = "";
-    }
-  });
-
-  //remove login form if displayed
-  if (!sessionForm.classList.contains("hidden")) {
-    sessionForm.classList.add("hidden");
-  }
-});
-
-sessionFormToggle.addEventListener("click", (e) => {
-  showSessionForm(e);
-
-  const sessionFormSubmit = sessionForm.querySelector("input[type=submit]");
-  sessionFormSubmit.addEventListener("click", () => {
-    //grab form
-    const sessionFormById = document.querySelector("#session-form");
-    // if any field is blank
-    if (!sessionFormById.checkValidity()) {
-      sessionFormById.reportValidity();
-      e.preventDefault();
+    //remove login form if displayed
+    if (!sessionForm.classList.contains("hidden")) {
+      sessionForm.classList.add("hidden");
     }
   });
-  //remove signup form if displayed
-  if (!userForm.classList.contains("hidden")) {
-    userForm.classList.add("hidden");
-  }
-});
+}
+if (sessionFormToggle) {
+  sessionFormToggle.addEventListener("click", (e) => {
+    showSessionForm(e);
+
+    const sessionFormSubmit = sessionForm.querySelector("input[type=submit]");
+    sessionFormSubmit.addEventListener("click", () => {
+      //grab form
+      const sessionFormById = document.querySelector("#session-form");
+      // if any field is blank
+      if (!sessionFormById.checkValidity()) {
+        sessionFormById.reportValidity();
+        e.preventDefault();
+      }
+    });
+    //remove signup form if displayed
+    if (!userForm.classList.contains("hidden")) {
+      userForm.classList.add("hidden");
+    }
+  });
+}
