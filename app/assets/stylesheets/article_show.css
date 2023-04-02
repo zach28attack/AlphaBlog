@@ -1,0 +1,30 @@
+.article-card {
+  background-color: var(--primary-color);
+  width: 50%;
+}
+.article-card h1 {
+  background-color: white;
+  margin: 1rem;
+  border-radius: 20px;
+  padding: 0.4rem 0;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.article-card h3 {
+  margin: 0.3rem;
+  color: var(--accent-color);
+}
+.article-card h3 span {
+  margin-right: 1rem;
+  background-color: white;
+  color: var(--primary-color);
+  padding: 0.1rem 0.3rem;
+  border-radius: 50px;
+}
+.article-card article {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 20px;
+}
