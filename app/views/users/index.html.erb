@@ -8,7 +8,7 @@
           <%= image_tag "default-profile-picture1.jpg", alt: "Default profile picture", class:"user-index-img" %>
         <%end%>
         <div class="user-index-header">
-          <p><%= link_to user.username, user_path(user) %></p>
+          <%= link_to user.username, user_path(user) %>
         </div>
         <p style="margin-left: 6rem"><%= pluralize(user.articles.count, "article")%>:</p>
         <ul class="user-article-list">
