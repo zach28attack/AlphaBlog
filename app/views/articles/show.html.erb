@@ -1,7 +1,7 @@
 <div class="container">
   <div class="article-card container flex-column">
     <h1><%= @article.title%></h1>
-    <h3><span><%= @article.user.username%></span><%= @article.categories.last.name%></h3>
+    <h3><span><%= @article.user.username%></span><%= @article.categories.last.name if @article.categories.last%></h3>
     <article>
       <%= @article.body%>
     </article>
