@@ -48,10 +48,11 @@ RSpec.describe "Articles", type: :system do
   context "GET article show" do
     it "should redirect to article show" do 
       visit root_path
-      sleep 0.1
       click_on "Articles"
+      sleep 0.1
       article_element = find('.article', text: article.title)
       article_element.hover
+      sleep 0.1
       buttons = article_element.find('.article-buttons')
       view_link = buttons.find('a', text: 'View')
       view_link.click
